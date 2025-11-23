@@ -24,7 +24,7 @@ const SingleReelPage = () => {
   useEffect(() => {
     const fetchReel = async () => {
       const res = await axios.get(
-        `${import.meta.env.API_URL}/api/food/save/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/food/save/${id}`,
         {
           withCredentials: true,
         }
@@ -40,7 +40,7 @@ const SingleReelPage = () => {
   const handleLike = async (video) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.API_URL}/api/food/like`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/food/like`,
         { foodId: video._id },
         { withCredentials: true }
       );
@@ -58,7 +58,7 @@ const SingleReelPage = () => {
   const handleSave = async (video) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.API_URL}/api/food/save`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/food/save`,
         { foodId: video._id },
         { withCredentials: true }
       );

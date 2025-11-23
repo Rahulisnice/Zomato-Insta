@@ -10,7 +10,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.API_URL}/api/food/food-partner/${id}`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/food/food-partner/${id}`, {
         withCredentials: true,
       })
       .then((res) => {

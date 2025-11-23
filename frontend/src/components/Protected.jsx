@@ -11,7 +11,7 @@ export default function Protected({ children }) {
     const checkLogin = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.API_URL}/api/check-auth`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/check-auth`,
           {
             withCredentials: true,
           }

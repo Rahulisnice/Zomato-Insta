@@ -44,7 +44,7 @@ const CreateFood = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.API_URL}/api/food`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/food`,
         formData,
         { withCredentials: true }
       );

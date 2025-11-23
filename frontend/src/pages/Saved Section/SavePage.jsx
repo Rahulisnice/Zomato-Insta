@@ -14,7 +14,7 @@ const SavePage = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.API_URL}/api/food/save`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/food/save`, {
         withCredentials: true,
       })
       .then((response) => {

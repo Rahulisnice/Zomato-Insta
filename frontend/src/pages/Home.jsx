@@ -39,7 +39,9 @@ const HomePage = () => {
   // -------------------- Fetch Videos / role --------------------
   useEffect(() => {
     axios
-      .get(`${import.meta.env.API_URL}/api/food`, { withCredentials: true })
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/food`, {
+        withCredentials: true,
+      })
       .then((response) => {
         setVideos(response.data.foodItems);
         setRole(response.data.role);
@@ -59,7 +61,7 @@ const HomePage = () => {
   const handleLike = async (item) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.API_URL}/api/food/like`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/food/like`,
         { foodId: item._id },
         { withCredentials: true }
       );
@@ -86,7 +88,7 @@ const HomePage = () => {
   const handleSave = async (item) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.API_URL}/api/food/save`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/food/save`,
         { foodId: item._id },
         { withCredentials: true }
       );

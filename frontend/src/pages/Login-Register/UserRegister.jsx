@@ -14,7 +14,7 @@ const UserRegister = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.API_URL}/api/auth/register`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/register`,
         {
           fullname,
           email,

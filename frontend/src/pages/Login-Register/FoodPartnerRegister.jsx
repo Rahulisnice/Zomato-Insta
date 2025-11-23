@@ -25,7 +25,7 @@ const FoodPartnerRegister = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.API_URL}/api/auth/food-partner/register`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/food-partner/register`,
         { email, password, phone, name, address, contactName },
         { withCredentials: true }
       );
