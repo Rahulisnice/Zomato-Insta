@@ -14,7 +14,7 @@ connectDb();
 
 app.use(
   cors({
-    origin: "https://zomato-insta.vercel.app",
+    origin: "https://zomato-insta-frontend.onrender.com",
     credentials: true,
   })
 );
