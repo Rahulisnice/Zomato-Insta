@@ -34,7 +34,13 @@ export const Register = async (req, res) => {
     });
 
     const token = generateToken(newUser._id);
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
 
     await newUser.save();
     res.status(201).json({
@@ -68,8 +74,13 @@ export const Login = async (req, res) => {
     );
 
     const token = generateToken(existUser._id);
-    res.cookie("token", token);
-
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
     if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
@@ -126,7 +137,13 @@ export const registerFoodPartner = async (req, res) => {
     });
 
     const token = generateToken(newFoodPartner._id);
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
 
     await newFoodPartner.save();
     res.status(201).json({
@@ -163,7 +180,13 @@ export const foodPartnerLogin = async (req, res) => {
     );
 
     const token = generateToken(existUser._id);
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
 
     if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials" });
