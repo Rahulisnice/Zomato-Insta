@@ -46,7 +46,7 @@ const Profile = () => {
             {/* TOP SECTION */}
             <div className="flex items-center gap-4">
               <img
-                className="w-[120px] h-[120px] max-[900px]:w-[24] max-[900px]:h-[24] max-[420px]:w-[72px] max-[420px]:h-[72px] rounded-full object-cover bg-gray-100 border-2 border-gray-300 dark:border-gray-600"
+                className="w-[120px] h-[120px] max-[900px]:w-24 max-[900px]:h-24 max-[420px]:w-[72px] max-[420px]:h-[72px] rounded-full object-cover bg-gray-100 border-2 border-gray-300 dark:border-gray-600"
                 src={image}
                 alt="avatar"
               />
