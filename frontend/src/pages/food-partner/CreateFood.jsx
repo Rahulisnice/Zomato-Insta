@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { CloudUpload, ChessRook, Club, BowArrow } from "lucide-react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 
@@ -40,15 +40,16 @@ const CreateFood = () => {
     const formData = new FormData();
     formData.append("name", form.name);
     formData.append("description", form.description);
-    formData.append("video", form.video);
+    // formData.append("video", form.video);
 
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/food`,
-        formData,
-        { withCredentials: true }
-      );
-      toast.success(response.data.message);
+      // const response = await axios.post(
+      //   `${import.meta.env.VITE_BACKEND_URL}/api/food`,
+      //   formData,
+      //   { withCredentials: true }
+      // );
+      // toast.success(response.data.message);
+      toast.error("Upload Feature is disabled in demo by host");
       navigate("/");
     } catch (error) {
       toast.error(error.response.data.message);
