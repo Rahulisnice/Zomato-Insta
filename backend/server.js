@@ -14,7 +14,7 @@ connectDb();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://zomato-insta-im0q.onrender.com",
     credentials: true,
   })
 );
